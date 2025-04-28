@@ -1,0 +1,69 @@
+/* --------------------------------------------------*/
+
+body {
+
+    background-color: rgba(253, 255, 252, 1);
+    color: rgba(3, 25, 30, 1);
+
+}
+
+.btn {
+
+    background-color: rgba(253, 255, 252, 0.2);
+    color: rgba(3, 25, 30, 1);
+    border: 1px solid rgba(3, 25, 30, 0.5);
+
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 5px;
+
+}
+
+.btn:hover {
+
+    border: 1px solid rgba(3, 25, 30, 1);
+
+}
+
+
+
+
+/* --------------------------------------------------
+   HEADER
+   -------------------------------------------------- */
+
+header .logo {
+
+    filter: invert(8%) sepia(33%) saturate(1017%) hue-rotate(144deg) brightness(98%) contrast(100%);
+
+}
+
+header ul a {
+
+    color: rgba(3, 25, 30, 1);
+
+}
+
+/* --------------------------------------------------
+   FOOTER
+   -------------------------------------------------- */
+
+footer {
+
+    background-color: rgba(253, 255, 252, 1);
+    border-top: 1px solid rgba(3, 25, 30, 0.15);
+
+}
+
+footer .logo {
+
+    filter: invert(8%) sepia(33%) saturate(1017%) hue-rotate(144deg) brightness(98%) contrast(100%);
+
+}
+
+footer hr {
+
+    border-top: 1px solid rgba(3, 25, 30, 1);
+
+}
