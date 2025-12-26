@@ -1,0 +1,56 @@
+.tables {
+
+    margin-top: 170px;
+    margin-bottom: 28%;
+    
+    padding: 0;
+    padding-left: 16%;
+    padding-right: 16%;
+
+}
+
+table {
+
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+    
+    font-size: 45px;
+    letter-spacing: -3px;
+    font-weight: 250;
+
+    caret-color: transparent;
+
+}
+
+strong {
+
+    font-weight: 450;
+    
+}
+
+.link {
+
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 1);
+    
+    text-decoration-line: none;
+
+    &:hover {
+
+        -webkit-animation-name: hover;
+        -webkit-animation-duration: 0.7s;
+        -webkit-animation-fill-mode: forwards;
+        animation-name: hover;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+    
+    }
+
+}
+
+@keyframes hover {
+
+    from { background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 1); }
+    to { background-color: rgba(0, 0, 0, 1); color: #f2f2f2; }
+
+}

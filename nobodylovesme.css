@@ -1,0 +1,99 @@
+::selection {
+
+    color: rgba(37, 22, 5, 1);
+    background-color: rgb(225, 169, 83);
+
+}
+
+/* --------------------------------------------------*/
+
+body {
+
+    background-color: rgba(37, 22, 5, 1);
+    color: rgba(233, 224, 188, 1)
+
+}
+
+.btn {
+
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 5px;
+
+}
+
+.btn:hover {
+
+    border: 1px solid rgba(233, 224, 188, 1);
+
+}
+
+
+
+
+
+
+/* --------------------------------------------------
+   HEADER
+   -------------------------------------------------- */
+
+header .logo {
+
+    filter: invert(81%) sepia(31%) saturate(212%) hue-rotate(6deg) brightness(111%) contrast(83%);
+
+}
+
+header .ico {
+
+    width: 48px;
+
+}
+
+header ul a {
+
+    color: rgba(233, 224, 188, 1);
+
+}
+
+
+
+
+
+/* --------------------------------------------------
+   FOOTER
+   -------------------------------------------------- */
+
+footer {
+
+    background-color: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+}
+
+footer .logo {
+
+    filter: invert(100%) sepia(0%) saturate(322%) hue-rotate(68deg) brightness(116%) contrast(100%);
+
+}
+
+footer hr {
+
+    border-top: 1px solid rgba(233, 224, 188, 1);
+
+}
+
+
+
+
+/* --------------------------------------------------*/
+
+main .logo {
+
+    float: center;
+
+}

@@ -1,0 +1,10 @@
+* git add FILENAME
+* git add FILENAME FILENAME
+* git add .  <- ALL
+
+* git commit -m 'memo'
+
+* git status
+* git log
+
+* git push -u https://github.com/JuneSaturn/junesaturn.github.io main

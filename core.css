@@ -1,0 +1,336 @@
+/* --------------------------------------------------
+   FONTS
+   -------------------------------------------------- */
+
+@font-face {
+    font-family: 'Lexendra';
+    
+    src: url('fonts/Lexend-VariableFont_wght.woff2') format('woff2'),
+         url('fonts/Lexend-VariableFont_wght.woff') format('woff'),
+         url('fonts/Lexend-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FjallaOne';
+
+    src: url('fonts/FjallaOne-Regular.woff2') format('woff2'),
+         url('fonts/FjallaOne-Regular.woff') format('woff'),
+         url('fonts/FjallaOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RubikMonoOne';
+
+    src: url('fonts/RubikMonoOne-Regular.woff2') format('woff2'),
+         url('fonts/RubikMonoOne-Regular.woff') format('woff'),
+         url('fonts/RubikMonoOne-Regular.ttf') format('truetype');
+}
+
+/* --------------------------------------------------*/
+
+::selection {
+    color: rgb(242, 242, 242, 1);
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.undraggable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    /*
+    user-drag: none;
+    */
+}
+
+.header-space {
+    margin-top: 100px;
+}
+
+.logo {
+    caret-color: transparent;
+
+    position: relative;
+    width: 150px;
+}
+
+.btn {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+
+    background-color: rgba(242, 242, 242, 0.2);
+    color: rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+
+    transition-duration: 0.5s;
+}
+
+.btn:hover {
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.btn:active {
+    background-color: black;
+    color: rgb(242, 242, 242, 1);
+}
+
+@media only screen and (max-width: 800px) {
+    .logo {
+        width: 100px;
+    }
+}
+
+/* --------------------------------------------------*/
+
+html, body {
+    font-family: 'lexendra';
+    background-color: rgba(242, 242, 242, 1);
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: -1px;
+    
+    overflow-x: hidden;
+}
+
+p {
+    margin-right: 32px;
+    margin-left: 32px;
+ 
+    line-height: 1.7rem;
+}
+
+h1 {
+    margin: 0;
+    margin-left: 32px;
+
+    font-weight: 300;
+
+    font-size: 45px;
+    letter-spacing: -3px;
+}
+
+h3 {
+    margin: 0;
+
+    font-weight: 500;
+
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+   font-size: 14px;
+  }
+ 
+ p {
+  margin-left: 20px;
+  margin-right: 20px;
+ }
+}
+
+/* --------------------------------------------------
+   HEADER
+   -------------------------------------------------- */
+
+header {
+    position: fixed;
+    z-index: 10;
+    padding: 4px;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* background: linear-gradient(rgba(242, 242, 242, 0.3), rgba(242, 242, 242, 0)); */
+
+    background-color: rgba(242, 242, 242, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+header .logo:hover {
+    cursor: pointer;
+}
+
+header ul {
+    list-style-type: none;
+    list-style: none;
+    gap: 1.2em;
+
+    line-height: 1px;
+
+    float: right;
+    display: flex;
+    white-space: nowrap;
+    margin: 18px;
+}
+
+header ul li {
+    float: left;
+    cursor: pointer;
+}
+
+header ul a {
+    color: rgba(0, 0, 0, 1);
+    text-shadow: -1px 0px rgba(242, 242, 242, 0.25),
+                 0px 1px rgba(242, 242, 242, 0.25),
+                 1px 0px rgba(242, 242, 242, 0.25),
+                 0px -1px rgba(242, 242, 242, 0.25);
+    
+    text-decoration-line: none;
+}
+
+header .hamburger {
+    height: 18px;
+	
+	    float: right;
+    display: grid;
+    	align-items: center;
+    	justify-content: end;
+ 
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+   header {
+      padding: 14px;
+   }
+    header ul {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------
+   MOBILE MENU
+   -------------------------------------------------- */
+
+.menu-formobile {
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    
+    background-color: rgba(242, 242, 242, 0.25);
+    backdrop-filter: blur(12px);
+    
+    display: none;
+}
+
+.menu-formobile ul {
+    list-style-type: none;
+    list-style: none;
+    
+    font-size: 1.5em;
+}
+
+.menu-formobile a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration-line: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .menu-formobile {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------
+   FOOTER
+   -------------------------------------------------- */
+
+footer {
+    font-size: 12px;
+    letter-spacing: -0.5px;
+
+    background-color: rgba(242, 242, 242, 1);
+    border-top: 1px solid rgb(0, 0, 0, 0.15);
+
+    padding: 35px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+ 
+   margin-top: auto;
+}
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+footer hr {
+    border-top: 1px solid rgba(0, 0, 0, 1);
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+footer .socials {
+   float: right;
+   position: relative;
+   bottom: 5px;
+}
+
+footer .socials-ico {
+    width: 42px;
+    height: 42px;
+}
+
+footer .lang {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url('images/Globe.svg');
+        background-size: 100%;
+        background-position: center;
+        vertical-align: top;
+        margin-right: 9px;
+    }
+}
+
+
+
+footer #txt_footer_instruction {
+    display: block;
+}
+
+@media only screen and (max-width: 800px) {
+    footer {
+        font-size: 10px;
+        padding: 14px;
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+  footer .socials-ico {
+   width: 32px;
+   height: 32px;
+  }
+    footer .lang {
+        display: block;
+        margin-top: 25px;
+        &::before {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
