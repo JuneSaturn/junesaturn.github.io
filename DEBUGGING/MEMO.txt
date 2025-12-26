@@ -8,3 +8,8 @@
 * git log
 
 * git push -u https://github.com/JuneSaturn/junesaturn.github.io main
+* git push
+* git push -u origin main
+
+* git remote add origin https://github.com/JuneSaturn/junesaturn.github.io
+* git remote -v
