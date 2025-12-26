@@ -1,6 +1,6 @@
 * git add FILENAME
 * git add FILENAME FILENAME
-* git add .  <- ALL
+* git add .                  <- ALL
 
 * git commit -m 'memo'
 
