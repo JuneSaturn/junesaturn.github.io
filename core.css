@@ -136,14 +136,13 @@ h3 {
 }
 
 @media only screen and (max-width: 800px) {
-  body {
-   font-size: 14px;
-  }
- 
- p {
-  margin-left: 20px;
-  margin-right: 20px;
- }
+    body {
+        font-size: 14px;
+    }
+    p {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 /* --------------------------------------------------
@@ -153,7 +152,7 @@ h3 {
 header {
     position: fixed;
     z-index: 10;
-    padding: 4px;
+    padding: 24px;
     top: 0;
     left: 0;
     right: 0;
@@ -199,20 +198,25 @@ header ul a {
 header .hamburger {
     height: 18px;
 	
-	    float: right;
+	float: right;
     display: grid;
-    	align-items: center;
-    	justify-content: end;
+    align-items: center;
+    justify-content: end;
  
     cursor: pointer;
+
+    display: none;
 }
 
 @media only screen and (max-width: 800px) {
-   header {
-      padding: 14px;
-   }
+    header {
+        padding: 14px;
+    }
     header ul {
         display: none;
+    }
+    header .hamburger {
+        display: grid;
     }
 }
 
@@ -265,7 +269,8 @@ footer {
     padding-top: 50px;
     padding-bottom: 50px;
  
-   margin-top: auto;
+
+   margin-top: auto;
 }
 
 footer .logo {
@@ -321,10 +326,10 @@ footer #txt_footer_instruction {
         padding-top: 26px;
         padding-bottom: 26px;
     }
-  footer .socials-ico {
-   width: 32px;
-   height: 32px;
-  }
+    footer .socials-ico {
+        width: 32px;
+        height: 32px;
+    }
     footer .lang {
         display: block;
         margin-top: 25px;
