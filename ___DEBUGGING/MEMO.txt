@@ -5,6 +5,6 @@
 * git commit -m 'memo'
 
 * git status
-* git log
+* git log                    <- q to exit
 
 * git push -u https://github.com/JuneSaturn/junesaturn.github.io main
