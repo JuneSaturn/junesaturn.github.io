@@ -122,7 +122,7 @@
     
     border-radius: 15px;
     margin: 14px;
-    padding: 10px;
+    padding: 0px;
     
     background-color: black;
     background-repeat: no-repeat;
@@ -141,6 +141,7 @@
 
 .prime-content .desc .title {
     display: block;
+    height: 8rem;
 }
 
 .prime-content .desc hr {
@@ -148,7 +149,7 @@
     margin: 10px auto;
     height: 0;
     border: none;
-    border-top: 1px solid rgb(0, 255, 21);
+    border-top: 1px solid rgb(242, 242, 242, 0.3);
 }
 
 .prime-content .desc .menu {
@@ -167,11 +168,10 @@
 @media only screen and (max-width: 800px) {
     .prime-content {
         height: 50vh;
-        padding: 10px;
         margin: 14px;
     }
     .prime-content .desc .title {
-        height: 2rem;
+        height: 2.6rem;
     }
 }
 

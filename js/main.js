@@ -2,17 +2,17 @@
 // HEADER COLORING
 //-----------------------------------------------------------------------------------------------------------
 
-$(document).ready(function() {
+$(() => {
     scrollManager();
 });
 
-$(window).scroll(function () {
+$(window).on('scroll', function () {
     scrollManager();
 });
 
 function scrollManager() {
     let scrollTop = $(document).scrollTop(); 
-    //console.log(scrollTop);
+    console.log(scrollTop);
 
     if (scrollTop < 868) {
         color("white");
@@ -55,7 +55,7 @@ function color(col) {
 
 let slideIndex = 1;
 
-$(document).ready(function() {
+$(() => {
     slideIndex = 1;
     showSlides(slideIndex);
 });
