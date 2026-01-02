@@ -44,6 +44,7 @@
 
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .slide .desc {
@@ -137,6 +138,7 @@
     width: 100%;
     
     color: rgb(242, 242, 242);
+    mix-blend-mode: difference;
 }
 
 .prime-content .desc .title {
