@@ -12,8 +12,10 @@
 	<meta charset="utf-8">
 </head>
 <body>
+			<!----------------------------------------------------------------------------------------------------------->
+	<!-- HEADER -->
 	<header class="undraggable">
-		<img src="images/June Saturn.svg" class="logo undraggable" onclick="goToMain()">
+		<span class="logo undraggable"><img src="images/June Saturn.svg" onclick="goToMain()"></span>
 		<ul>
 			<li><a href="games.html"><span id="txt_header_games">Games</span></a></li>
 			<li><a href="designs.html"><span id="txt_header_designs"></span>Designs</span></a></li>
@@ -21,17 +23,21 @@
 			<li><a href="aboutme.html"><span id="txt_header_aboutme"></span>About me</span></a></li>
 			<li><a href="contacts.html"><span id="txt_header_contacts"></span>Contacts</span></a></li>
 		</ul>
-		<img src="images/Hamburger.svg" class="hamburger">
+ <span class="hamburger"><img src="images/Hamburger.svg" class="undraggable" onclick="openMobileMenu()"></span>
 	</header>
+		<!----------------------------------------------------------------------------------------------------------->
+<!-- MOBILE MENU -->
 	<aside class="menu-formobile">
-		<ul>
-		<li><a href="games.html"><span id="txt_header_games">Games</span></a></li>
-		<li><a href="designs.html"><span id="txt_header_designs"></span>Designs</span></a></li>
-		<li><a href="otherprojects.html"><span id="txt_header_otherprojects"></span>Other projects</span></a></li>
-		<li><a href="aboutme.html"><span id="txt_header_aboutme"></span>About me</span></a></li>
-		<li><a href="contacts.html"><span id="txt_header_contacts"></span>Contacts</span></a></li>
-		</ul>
+	<div>
+		<div><span id="txt_header_games">Games</span></div>
+		<div><span id="txt_header_designs">Designs</span></div>
+		<div><span id="txt_header_otherprojects">Other projects</span></div>
+		<div><span id="txt_header_aboutme">About me</span></div>
+		<div><span id="txt_header_contacts">Contacts</span></div>
+		</div>
 	</aside>
+		<!----------------------------------------------------------------------------------------------------------->
+<!-- MAIN SLIDE SHOW -->
 	<main>
 		<div class="slides-layout"> 
 			<div class="slide">
@@ -39,6 +45,7 @@
 			</div>
 		</div>
 		<!----------------------------------------------------------------------------------------------------------->
+		<!-- PRIME CONTENT -->
 		<div class="prime-content" style="background-image: url('images/illustrations/Robust.png')">
 			<div class="desc">
 			<img src="images/games/The Sword Cinema Logo Standardized 1.svg" class="title">
@@ -56,17 +63,24 @@
 			</div>
 		</div>
 		<!----------------------------------------------------------------------------------------------------------->
+		<!-- OTHER NOTABLE CONTENTS -->
+		<div class="notable-contents">
+			<div class="content" style="background-image: url('images/illustrations/Robust.png')"></div>
+			<div class="content" style="background-image: url('images/illustrations/Robust.png')"></div>
+		</div>
 		<div class="notable-contents">
 			<div class="content" style="background-image: url('images/illustrations/Robust.png')"></div>
 			<div class="content" style="background-image: url('images/illustrations/Robust.png')"></div>
 		</div>
 		<!----------------------------------------------------------------------------------------------------------->
-		123
-		<br><br>
 		<p>Hello World</p>
 	</main>
+<!----------------------------------------------------------------------------------------------------------->
+<!-- FOOTER -->
 	<footer>
-		<img src="images/June Saturn.svg" class="logo undraggable">
+		<span class="logo undraggable">
+		<img src="images/June Saturn.svg">
+		</span>
 		<div class="socials">
 			<a target='_blank' href="https://youtube.com/@June-Saturn" class="link" style="text-decoration-line: none">
 				<img class="socials-ico undraggable" id="youtube" src="images/socials/YouTube Doodle.svg"></img>
@@ -84,6 +98,7 @@
 		<hr>
 		<span id="txt_footer_copyright">Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.</span>
 		<span class="lang">English</span>
+				<!----------------------------------------------------------------------------------------------------------->
 	</footer>
 </body>
 </html>

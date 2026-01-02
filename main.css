@@ -1,0 +1,251 @@
+/* --------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+.img {
+    vertical-align: middle;
+}
+
+
+/* --------------------------------------------------
+   SLIDES
+   -------------------------------------------------- */
+
+.slides-layout {
+    background-color: rgb(0, 0, 0);
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: inline-block;
+}
+
+.slide {
+    display: none;
+}
+
+.slide .img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.slide .desc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    
+    margin-top: auto;
+    
+    text-align: center;
+    background-color: rgba(255, 255, 0, 0.283);
+}
+
+.slide .desc .title {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+
+    color: rgb(0, 0, 0);
+}
+
+.slide .desc .text {
+    color: rgb(0, 0, 0);
+
+    position: relative;
+    font-size: 15px;
+    padding: 8px 1px;
+    width: 100%;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from { 
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    } 
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .text {
+        font-size: 10px;
+    }
+}
+
+
+/* --------------------------------------------------
+   PRIME CONTENT
+   -------------------------------------------------- */
+
+.prime-content {
+    position: relative;
+    height: 80vh;
+    
+    border-radius: 15px;
+    margin: 14px;
+    padding: 0px;
+    
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.prime-content .desc {
+    position: absolute;
+    padding: 12px;
+    bottom: 0%;
+    
+    width: 100%;
+    
+    color: rgb(242, 242, 242);
+    mix-blend-mode: difference;
+}
+
+.prime-content .desc .title {
+    display: block;
+    height: 8rem;
+}
+
+.prime-content .desc hr {
+    width: 100%;
+    margin: 10px auto;
+    height: 0;
+    border: none;
+    border-top: 1px solid rgb(242, 242, 242, 0.3);
+}
+
+.prime-content .desc .menu {
+    border-radius: 12px;
+}
+
+.prime-content .desc .menu ul {
+    list-style-type: none;
+    list-style: none;
+
+    float: right;
+    display: flex;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 800px) {
+    .prime-content {
+        height: 50vh;
+        margin: 14px;
+    }
+    .prime-content .desc .title {
+        height: 2.6rem;
+    }
+}
+
+
+/* --------------------------------------------------
+   NOTABLE CONTENTS
+   -------------------------------------------------- */
+
+.notable-contents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    padding: 14px;
+    padding-top: 0px;
+}
+
+.notable-contents .content {
+    aspect-ratio: 3 / 2;
+    
+    border-radius: 15px;
+    
+    padding: 23px;
+    
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .notable-contents .content {
+    }
+}
+
+
+
+
+/* --------------------------------------------------
+   ONGOING PROJECTS LAYOUT (삭제 예정)
+   -------------------------------------------------- */
+
+.ongoingprojects-layout {
+    margin-top: 170px;
+    
+    padding: 0;
+    padding-left: 16%;
+    padding-right: 16%;
+}
+
+.ongoingprojects-layout ul {
+    padding: 0px;
+
+    list-style-type: none;
+    list-style: none;
+    gap: 4%;
+    row-gap: 15em;
+
+    line-height: 1px;
+
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}
+
+.games-layout ul li {
+    float: left;
+}
+
+/* --------------------------------------------------*/
+
+.inverted {
+    filter: invert(1);
+}
