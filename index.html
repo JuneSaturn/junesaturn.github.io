@@ -28,13 +28,23 @@
 		<!----------------------------------------------------------------------------------------------------------->
 <!-- MOBILE MENU -->
 	<aside class="menu-formobile">
-	<div>
-		<div><span id="txt_header_games">Games</span></div>
-		<div><span id="txt_header_designs">Designs</span></div>
-		<div><span id="txt_header_otherprojects">Other projects</span></div>
-		<div><span id="txt_header_aboutme">About me</span></div>
-		<div><span id="txt_header_contacts">Contacts</span></div>
-		</div>
+	<div class="list">
+		<details open>
+		  <summary><span id="txt_header_games">GAMES</span></summary>
+			  <section class="featured-games">
+			  	  <div class="menubtn" onclick="goTo('theswordcinema')"><span id="txt_game_tsc">THE SWORD CINEMA</span></div>
+			  	  <div class="menubtn" onclick="goTo('rainbowchateau')"><span id="txt_game_rnc">RAINBOW CHATEAU</span></div>
+			  	<div class="menubtn" onclick="goTo('oddfairies')"><span id="txt_game_ofe">ODD FAIRIES</span></div>
+			  </section>
+		</details>			
+		<div class="menubtn" onclick="goTo('designs')"><span id="txt_header_designs">DESIGNS</span></div>
+		<div class="menubtn" onclick="goTo('otherprojects')"><span id="txt_header_otherprojects">OTHER PROJECTS</span></div>
+		<div class="menubtn" onclick="goTo('aboutme')"><span id="txt_header_aboutme">ABOUT ME</span></div>
+		<div class="menubtn" onclick="goTo('contacts')"><span id="txt_header_contacts">CONTACTS</span></div>
+				<section class="copy">
+			(c) 2026 June Saturn
+		</section>
+	</div>
 	</aside>
 		<!----------------------------------------------------------------------------------------------------------->
 <!-- MAIN SLIDE SHOW -->
@@ -46,7 +56,7 @@
 		</div>
 		<!----------------------------------------------------------------------------------------------------------->
 		<!-- PRIME CONTENT -->
-		<div class="prime-content" style="background-image: url('images/illustrations/Robust.png')">
+		<div class="prime-content" style="background-image: url('images/games/The Sword Cinema Background 1.png')">
 			<div class="desc">
 			<img src="images/games/The Sword Cinema Logo Standardized 1.svg" class="title">
 				<hr>
@@ -73,7 +83,7 @@
 			<div class="content" style="background-image: url('images/illustrations/Robust.png')"></div>
 		</div>
 		<!----------------------------------------------------------------------------------------------------------->
-		<p>Hello World</p>
+		<p>Hello World, <span class="btn">I'm here</span></p>
 	</main>
 <!----------------------------------------------------------------------------------------------------------->
 <!-- FOOTER -->
@@ -81,7 +91,7 @@
 		<span class="logo undraggable">
 		<img src="images/June Saturn.svg">
 		</span>
-		<div class="socials">
+		<section class="socials">
 			<a target='_blank' href="https://youtube.com/@June-Saturn" class="link" style="text-decoration-line: none">
 				<img class="socials-ico undraggable" id="youtube" src="images/socials/YouTube Doodle.svg"></img>
 			</a>
@@ -91,14 +101,16 @@
 			<a target='_blank' href="https://x.com/JuneSaturn_" class="link" style="text-decoration-line: none">
 				<img class="socials-ico undraggable" id="x" src="images/socials/X Doodle.svg"></img>
 			</a>
-		</div>
+		</section>
 		<span id="txt_footer_instruction">
 			Copyright (c) 2026 June Saturn, All rights reserved. All trademarks are the property of their respective owners.
 		</span>
 		<hr>
+		<section class="copy-and-lang">
 		<span id="txt_footer_copyright">Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.</span>
 		<span class="lang">English</span>
-				<!----------------------------------------------------------------------------------------------------------->
+		</section>
 	</footer>
+				<!----------------------------------------------------------------------------------------------------------->
 </body>
 </html>
