@@ -5,19 +5,26 @@
 // Coloring
 const BLACK = 0;
 const WHITE = 1;
+const DIFF = 2;
 let headerColor = 0;
+let stopColoring = false;
+let removeBorderBottom = false;
+
+// Menu
 let mobileMenuOpened = false;
 
 
 
 //-----------------------------------------------------------------------------------------------------------
-// HEADER COLORING
+// SCROLL MANAGEMENTS
 //-----------------------------------------------------------------------------------------------------------
 
+// START
 $(() => {
     scrollManager();
 });
 
+// UPDATE
 $(window).on('scroll', function () {
     scrollManager();
 });
@@ -26,29 +33,18 @@ function scrollManager() {
     let scrollTop = $(document).scrollTop(); 
     console.log(scrollTop);
     
-    if (scrollTop < window.innerHeight - 32) {
-        color(WHITE);
-    }
-    else if (scrollTop >= window.innerHeight - 32) {
-        color(BLACK);
+    // Switches color
+    if (mobileMenuOpened == false && stopColoring == false) {
+        if (scrollTop < window.innerHeight - 32) {
+            color(WHITE);
+        }
+        else if (scrollTop >= window.innerHeight - 32) {
+            color(BLACK);
+        }
     }
     
-    if (scrollTop > 10) {
-        if (headerColor == BLACK) {
-            $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0)");
-        }
-        else if (headerColor == WHITE) {
-            $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0)");
-        }
-    }
-    else {
-        if (headerColor == BLACK) {
-            $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0.5)");
-        }
-        else if (headerColor == WHITE) {
-            $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0.5)");
-        }
-    }
+    // Fades in or out of border-bottom
+    checkBorderBottom(scrollTop);
 }
 
 function scrollAnchors() {
@@ -80,16 +76,51 @@ function color(col) {
 
 
 
-
 //-----------------------------------------------------------------------------------------------------------
 // HEADER
 //-----------------------------------------------------------------------------------------------------------
+
+function checkBorderBottom(scrollTop) {
+    if (mobileMenuOpened == false && removeBorderBottom == false) {
+        if (scrollTop > 10) {
+            if (headerColor == BLACK) {
+                $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0)");
+            }
+            else if (headerColor == WHITE) {
+                $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0)");
+            }
+        }
+        else if (removeBorderBottom == false) {
+            if (headerColor == BLACK) {
+                $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0.5)");
+            }
+            else if (headerColor == WHITE) {
+                $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0.5)");
+            }
+        }
+        else if (removeBorderBottom) {
+            $("header").css("transition", "'0s'");
+            $("header").css("border-bottom", "0px solid rgba(0, 0, 0, 0)");
+        }
+    }
+    else if (mobileMenuOpened) {
+        if (headerColor == BLACK) {
+            $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0)");
+        }
+        else if (headerColor == WHITE) {
+            $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0)");
+        }
+    }
+}
 
 function goToMain() {
     const pathname = window.location.pathname;
     const pathnameSplit = pathname.split("/");
     const page = pathnameSplit[pathnameSplit.length-1];
     if (page == "index.html") {
+        if (mobileMenuOpened) {
+            return
+        }
         window.scroll({
             top: -window.scrollY,
             left: 0,
@@ -101,24 +132,32 @@ function goToMain() {
     }
 }
 
+function goTo(page) {
+    if (page == "main") {
+        page = "index";
+    }
+    window.location.href = page+".html";
+}
+
 function openMobileMenu() {
     if (mobileMenuOpened == true) {
         mobileMenuOpened = false;
+        $(".menu-formobile").css("opacity", "0");
+        $("header .hamburger").html('<img src="images/Hamburger.svg" class="undraggable" onclick="openMobileMenu()">');
+        scrollManager();
+        $(".menu-formobile").addClass("scrollToTop");
+        $(".menu-formobile").removeClass("scrollToBottom");
     }
     else if (mobileMenuOpened == false) {
         mobileMenuOpened = true;
+        $(".menu-formobile").css("opacity", "1");
+        $("header .hamburger").html('<img src="images/Back.svg" class="undraggable" onclick="openMobileMenu()">');
+        color(BLACK);
+        checkBorderBottom(0);
+        $(".menu-formobile").addClass("scrollToBottom");
+        $(".menu-formobile").removeClass("scrollToTop");
     }
 }
-
-
-
-//-----------------------------------------------------------------------------------------------------------
-// SLIDES
-//-----------------------------------------------------------------------------------------------------------
-
-$(() => {
-    
-});
 
 
 
