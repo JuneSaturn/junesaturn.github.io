@@ -31,7 +31,7 @@ $(window).on('scroll', function () {
 
 function scrollManager() {
     let scrollTop = $(document).scrollTop(); 
-    console.log(scrollTop);
+    // console.log(scrollTop);
     
     // Switches color
     if (mobileMenuOpened == false && stopColoring == false) {
@@ -70,7 +70,6 @@ function color(col) {
         $("header ul a").css("text-shadow",
         "-1px 0px rgba(242, 242, 242, 0.25), 0px 1px rgba(242, 242, 242, 0.25), 1px 0px rgba(242, 242, 242, 0.25), 0px -1px rgba(242, 242, 242, 0.25)"
         );
-
         $("header .hamburger > img").css("filter", "invert(0%) sepia(3%) saturate(5%) hue-rotate(334deg) brightness(98%) contrast(100%)");
     }
 }
@@ -116,9 +115,10 @@ function checkBorderBottom(scrollTop) {
 
 function goToMain() {
     const pathname = window.location.pathname;
-    const pathnameSplit = pathname.split("/");
-    const page = pathnameSplit[pathnameSplit.length-1];
-    if (page == "index.html") {
+    const segments = pathname.split("/").filter(Boolean);
+    let page = segments[segments.length-1] || "index";
+    page = page.replace(/\.html$/, "");
+    if (page === "index") {
         if (mobileMenuOpened) {
             return
         }
@@ -134,7 +134,7 @@ function goToMain() {
 }
 
 function goTo(page) {
-    if (page == "main") {
+    if (page == "home") {
         page = "index";
     }
     window.location.href = page+".html";
@@ -163,6 +163,21 @@ function openMobileMenu() {
 
 
 //-----------------------------------------------------------------------------------------------------------
+// FOOTER
+//-----------------------------------------------------------------------------------------------------------
+
+function openLangMenu() {
+    if ($('footer .lang .list').css('display') === 'block') {
+        $("footer .lang .list").css("display", "none");
+    }
+    else {
+        $("footer .lang .list").css("display", "block");
+    }
+}
+
+
+
+//-----------------------------------------------------------------------------------------------------------
 // ANIMATIONS
 //-----------------------------------------------------------------------------------------------------------
 
@@ -184,16 +199,7 @@ function zoomOut(event) {
 // USEFUL FUNCTIONS
 //-----------------------------------------------------------------------------------------------------------
 
-function updateLanguage(lang) {
-    $.each(langResource[lang], function(key, value) {
-        const element = $('#' + key);
-        if (element.length) {
-            element.text(value);
-        }
-    });
-}
-
-function searchPosition(c) {
-    var offset = $("."+c).offset();
+function searchPosition(className) {
+    var offset = $("."+className).offset();
     $('html, body').animate({scrollTop:offset.top}, 500);
 }
