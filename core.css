@@ -132,6 +132,10 @@ h1 {
     letter-spacing: -3px;
 }
 
+h2 {
+    margin: 32px;
+}
+
 h3 {
     margin: 0;
 
@@ -146,8 +150,15 @@ h3 {
         font-size: 14px;
     }
     p {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        margin-left: 18px;
+        margin-right: 18px;
     }
 }
 
@@ -305,6 +316,16 @@ header .hamburger > img {
     padding: 12px;
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    
+    transition-duration: 0.4s;
+}
+
+.menu-formobile > .list .menubtn:hover {
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+
+.menu-formobile > .list .menubtn:active {
+    transform: scale(1.03);
 }
 
 .menu-formobile > .list details .featured-games {
@@ -378,21 +399,20 @@ footer .socials-ico {
 }
 
 footer .lang {
-    padding: 15px;
+    padding: 16px;
     border-radius: 5px;
     border: 1px solid black;
-    
-    &::before {
-        content: "";
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background-image: url('images/Globe.svg');
-        background-size: 100%;
-        background-position: center;
-        vertical-align: top;
-        margin-right: 9px;
-    }
+}
+
+footer .lang-ico {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url('images/Globe.svg');
+    background-size: 100%;
+    background-position: center;
+    vertical-align: top;
+    margin-right: 9px;
 }
 
 footer #txt_footer_instruction {
@@ -413,9 +433,5 @@ footer #txt_footer_instruction {
     footer .lang {
         display: block;
         margin-top: 25px;
-        &::before {
-            width: 16px;
-            height: 16px;
-        }
     }
 }
