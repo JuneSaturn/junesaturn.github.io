@@ -61,11 +61,11 @@
 	</main>
 <!----------------------------------------------------------------------------------------------------------->
 <!-- FOOTER -->
-	<footer>
+		<footer>
 		<span class="logo undraggable">
 		<img src="images/June Saturn.svg">
 		</span>
-		<div class="socials">
+		<section class="socials">
 			<a target='_blank' href="https://youtube.com/@June-Saturn" class="link" style="text-decoration-line: none">
 				<img class="socials-ico undraggable" id="youtube" src="images/socials/YouTube Doodle.svg"></img>
 			</a>
@@ -75,14 +75,31 @@
 			<a target='_blank' href="https://x.com/JuneSaturn_" class="link" style="text-decoration-line: none">
 				<img class="socials-ico undraggable" id="x" src="images/socials/X Doodle.svg"></img>
 			</a>
-		</div>
-		<span id="txt_footer_instruction">
-			Copyright (c) 2026 June Saturn, All rights reserved. All trademarks are the property of their respective owners.
+		</section>
+		<span id="txt_footer_copyright">
+			Copyright &copy; 2026 June Saturn, All rights reserved. All trademarks are the property of their respective owners.
 		</span>
 		<hr>
-		<span id="txt_footer_copyright">Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.</span>
-		<span class="lang">English</span>
-		</footer>
+		<section class="copy-and-lang">
+		<span id="txt_footer_instruction">Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.</span>
+			<div class="footmenu">
+				  <span>Licenses</span>
+				  <span>Github page</span>
+				  <span>Language supports</span>
+			</div>
+			<div class="lang">
+		  <div class="lang-btn" onclick="openLangMenu()">
+		    <span class='lang-ico'></span>
+		    Select a language...
+		  </div>
+    <div class="list">
+      <div onclick="setLang('en-US')">English</div>
+		  	   <div onclick="setLang('fr-FR')">Français</div>
+		  	   <div onclick="setLang('ko-KR')">한국어</div>
+    </div>
+		</div>
+		</section>
+	</footer>
 				<!----------------------------------------------------------------------------------------------------------->
 </body>
 </html>

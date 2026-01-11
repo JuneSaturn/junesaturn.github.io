@@ -87,11 +87,6 @@
 		<h2>Starting with this portfolio...</h2>
 		<p>&nbsp; Shell we go together? In this narrative, which appears to portray the idea of auteurism in a largely
 			affirmative light, the fact that the overthrown power is named "Auteur" invites multiple layers of interpretation. 
-			<br>&nbsp; One possible reading is that it functions as a satire on the way mass media indiscriminately overuses
-			the term "artist." Another interpretation is that, even in a cultural landscape where a particular creative
-			movement—such as auteurism—has become dominant, the work asserts the possibility of resisting full assimilation
-			into the mainstream. Instead, it suggests that one can confront that dominance with confidence by twisting it
-			through one's own distinct sensibility and voice.</p>
 		<!----------------------------------------------------------------------------------------------------------->
 		<div style="margin: 60px"></div>
 	</main>
@@ -111,25 +106,26 @@
 				<img class="socials-ico undraggable" id="x" src="images/socials/X Doodle.svg"></img>
 			</a>
 		</section>
-		<span id="txt_footer_instruction">
+		<span id="txt_footer_copyright">
 			Copyright &copy; 2026 June Saturn, All rights reserved. All trademarks are the property of their respective owners.
 		</span>
 		<hr>
 		<section class="copy-and-lang">
-		<span id="txt_footer_copyright">Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.</span>
-			<ul>
-				  <li></li>
-				  <li></li>
-			</ul>
+		<span id="txt_footer_instruction">Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.</span>
+			<div class="footmenu">
+				  <span>Licenses</span>
+				  <span>Github page</span>
+				  <span>Language supports</span>
+			</div>
 			<div class="lang">
 		  <div class="lang-btn" onclick="openLangMenu()">
 		    <span class='lang-ico'></span>
-		    English
+		    Select a language...
 		  </div>
     <div class="list">
-      <div>English</div>
-		  	   <div>Français</div>
-		  	   <div>한국어</div>
+      <div onclick="setLang('en-US')">English</div>
+		  	   <div onclick="setLang('fr-FR')">Français</div>
+		  	   <div onclick="setLang('ko-KR')">한국어</div>
     </div>
 		</div>
 		</section>
