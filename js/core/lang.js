@@ -1,5 +1,4 @@
-{
-    "en": {
+"en": {
 
         "txt_header_games": "Games",
         "txt_header_designs": "Designs",
@@ -20,9 +19,10 @@
         "txt_footer_copyright": "Copyright (c) 2025 June Saturn, All rights reserved.",
         "txt_footer_instruction": "Designed by June Saturn and hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website."
 
-    },
+}
 
-    "fr": {
+    
+"fr": {
 
         "txt_header_games": "Jeux",
         "txt_header_designs": "Designs",
@@ -43,9 +43,9 @@
         "txt_footer_copyright": "Copyright (c) 2025 June Saturn, All rights reserved.",
         "txt_footer_instruction": "Designed by June Saturn and hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website."
 
-    },
+}
 
-    "ja": {
+"ja": {
 
         "txt_header_games": "ゲーム",
         "txt_header_designs": "デザイン",
@@ -66,9 +66,9 @@
         "txt_footer_copyright": "Copyright (c) 2025 June Saturn, All rights reserved.",
         "txt_footer_instruction": "Designed by June Saturn and hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website."
 
-    },
+}
 
-    "ko": {
+"ko": {
 
         "txt_header_games": "게임",
         "txt_header_designs": "디자인",
@@ -88,6 +88,29 @@
 
         "txt_footer_copyright": "Copyright (c) 2025 June Saturn, All rights reserved.",
         "txt_footer_instruction": "Designed by June Saturn and hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website."
+    
+}
 
-    }
+//-----------------------------------------------------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+//-----------------------------------------------------------------------------------------------------------
+
+function setLang(lang) {
+}
+
+function updateLang(lang) {
+    $.each(SUPERCODES[lang], function(id, value) {
+        const element = $('#' + id);
+        if (element.length) {
+            element.text(value);
+        }
+    });
 }

@@ -19,27 +19,29 @@ let mobileMenuOpened = false;
 // SCROLL MANAGEMENTS
 //-----------------------------------------------------------------------------------------------------------
 
-// START
-$(() => {
-    scrollManager();
-});
-
-// UPDATE
-$(window).on('scroll', function () {
-    scrollManager();
-});
+$(() => { scrollManager(); });
+$(window).on('scroll', function () { scrollManager(); });
 
 function scrollManager() {
-    let scrollTop = $(document).scrollTop(); 
+    let scrollTop = $(document).scrollTop();
+    const page = getCurrentPage();
+    
+    // For debugging
     // console.log(scrollTop);
     
     // Switches color
     if (mobileMenuOpened == false && stopColoring == false) {
-        if (scrollTop < window.innerHeight - 32) {
-            color(WHITE);
-        }
-        else if (scrollTop >= window.innerHeight - 32) {
-            color(BLACK);
+        switch(page) {
+            case "index":
+                if (scrollTop < window.innerHeight - 32) {
+                    color(WHITE);
+                }
+                else if (scrollTop >= window.innerHeight - 32) {
+                    color(BLACK);
+                }
+            break;
+            default:
+            break;
         }
     }
     
@@ -74,12 +76,6 @@ function color(col) {
     }
 }
 
-
-
-//-----------------------------------------------------------------------------------------------------------
-// HEADER
-//-----------------------------------------------------------------------------------------------------------
-
 function checkBorderBottom(scrollTop) {
     if (mobileMenuOpened == false && removeBorderBottom == false) {
         if (scrollTop > 10) {
@@ -113,11 +109,14 @@ function checkBorderBottom(scrollTop) {
     }
 }
 
+
+
+//-----------------------------------------------------------------------------------------------------------
+// GO TO... & OPEN...
+//-----------------------------------------------------------------------------------------------------------
+
 function goToMain() {
-    const pathname = window.location.pathname;
-    const segments = pathname.split("/").filter(Boolean);
-    let page = segments[segments.length-1] || "index";
-    page = page.replace(/\.html$/, "");
+    const page = getCurrentPage();
     if (page === "index") {
         if (mobileMenuOpened) {
             return
@@ -160,25 +159,21 @@ function openMobileMenu() {
     }
 }
 
-
-
-//-----------------------------------------------------------------------------------------------------------
-// FOOTER
-//-----------------------------------------------------------------------------------------------------------
-
 function openLangMenu() {
     if ($('footer .lang .list').css('display') === 'block') {
         $("footer .lang .list").css("display", "none");
+        $("footer .lang .list").css("width", "0%");
     }
     else {
         $("footer .lang .list").css("display", "block");
+        $("footer .lang .list").css("width", "100%");
     }
 }
 
 
 
 //-----------------------------------------------------------------------------------------------------------
-// ANIMATIONS
+// JS ANIMATIONS
 //-----------------------------------------------------------------------------------------------------------
 
 function zoomIn(event) {
@@ -199,7 +194,19 @@ function zoomOut(event) {
 // USEFUL FUNCTIONS
 //-----------------------------------------------------------------------------------------------------------
 
-function searchPosition(className) {
-    var offset = $("."+className).offset();
+function getCurrentPage() {
+    const pathname = window.location.pathname;
+    const segments = pathname.split("/").filter(Boolean);
+    let page = segments[segments.length-1] || "index";
+    page = page.replace(/\.html$/, "");
+    return page;
+}
+
+function getPosByClass(className) {
+    const offset = $("."+className).offset();
+    return offset;
+}
+
+function scrollToPos(offset) {
     $('html, body').animate({scrollTop:offset.top}, 500);
 }
