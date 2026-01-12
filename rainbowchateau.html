@@ -13,15 +13,15 @@
 </head>
 <body>
 <!----------------------------------------------------------------------------------------------------------->
-	<!-- HEADER -->
+		<!-- HEADER -->
 	<header class="undraggable">
 		<span class="logo undraggable"><img src="images/June Saturn.svg" onclick="goToMain()"></span>
 		<ul>
-			<li><a href="games.html"><span id="txt_header_games">Games</span></a></li>
-			<li><a href="designs.html"><span id="txt_header_designs"></span>Designs</span></a></li>
-			<li><a href="otherprojects.html"><span id="txt_header_otherprojects"></span>Other projects</span></a></li>
-			<li><a href="aboutme.html"><span id="txt_header_aboutme"></span>About me</span></a></li>
-			<li><a href="contacts.html"><span id="txt_header_contacts"></span>Contacts</span></a></li>
+			<li><a href="games.html"><span id="txt_menu_header_games">Games</span></a></li>
+			<li><a href="designs.html"><span id="txt_menu_header_designs"></span>Designs</span></a></li>
+			<li><a href="otherprojects.html"><span id="txt_menu_header_otherprojects"></span>Other projects</span></a></li>
+			<li><a href="aboutme.html"><span id="txt_menu_header_aboutme"></span>About me</span></a></li>
+			<li><a href="contacts.html"><span id="txt_menu_header_contacts"></span>Contacts</span></a></li>
 		</ul>
  <span class="hamburger"><img src="images/Hamburger.svg" class="undraggable" onclick="openMobileMenu()"></span>
 	</header>
@@ -30,19 +30,19 @@
 	<aside class="menu-formobile">
 	<div class="list">
 		<details open>
-		  <summary><span id="txt_header_games">GAMES</span></summary>
+		  <summary><span id="txt_menu_formobile_games">GAMES</span></summary>
 			  <section class="featured-games">
-			  	  <div class="menubtn" onclick="goTo('theswordcinema')"><span id="txt_game_tsc">THE SWORD CINEMA</span></div>
-			  	  <div class="menubtn" onclick="goTo('rainbowchateau')"><span id="txt_game_rnc">RAINBOW CHATEAU</span></div>
-			  	<div class="menubtn" onclick="goTo('oddfairies')"><span id="txt_game_ofe">ODD FAIRIES</span></div>
+			  	  <div class="menubtn" onclick="goTo('theswordcinema')"><span id="txt_menu_formobile_games_tsc">THE SWORD CINEMA</span></div>
+			  	  <div class="menubtn" onclick="goTo('rainbowchateau')"><span id="txt_menu_formobile_games_rnc">RAINBOW CHATEAU</span></div>
+			  	<div class="menubtn" onclick="goTo('oddfairies')"><span id="txt_menu_formobile_games_ofe">ODD FAIRIES</span></div>
 			  </section>
 		</details>			
-		<div class="menubtn" onclick="goTo('designs')"><span id="txt_header_designs">DESIGNS</span></div>
-		<div class="menubtn" onclick="goTo('otherprojects')"><span id="txt_header_otherprojects">OTHER PROJECTS</span></div>
-		<div class="menubtn" onclick="goTo('aboutme')"><span id="txt_header_aboutme">ABOUT ME</span></div>
-		<div class="menubtn" onclick="goTo('contacts')"><span id="txt_header_contacts">CONTACTS</span></div>
+		<div class="menubtn" onclick="goTo('designs')"><span id="txt_menu_formobile_designs">DESIGNS</span></div>
+		<div class="menubtn" onclick="goTo('otherprojects')"><span id="txt_menu_formobile_otherprojects">OTHER PROJECTS</span></div>
+		<div class="menubtn" onclick="goTo('aboutme')"><span id="txt_menu_formobile_aboutme">ABOUT ME</span></div>
+		<div class="menubtn" onclick="goTo('contacts')"><span id="txt_menu_formobile_contacts">CONTACTS</span></div>
 				<section class="copy">
-			(c) 2026 June Saturn
+			&copy; 2026 June Saturn
 		</section>
 	</div>
 	</aside>
@@ -53,7 +53,7 @@
 	</main>
 	<!---------------------------------------------------------------------------------------------------------------->
 	<!-- FOOTER -->
-		<footer>
+	<footer>
 		<span class="logo undraggable">
 		<img src="images/June Saturn.svg">
 		</span>
@@ -73,16 +73,18 @@
 		</span>
 		<hr>
 		<section class="copy-and-lang">
-		<span id="txt_footer_instruction">Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.</span>
+		<span id="txt_footer_instruction">
+			Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.
+		</span>
 			<div class="footmenu">
-				  <span>Licenses</span>
-				  <span>Github page</span>
-				  <span>Language supports</span>
+				  <span id="txt_menu_footer_licenses">Licenses</span>
+				  <span id="txt_menu_footer_githubpage">Github page</span>
+				  <span id="txt_menu_footer_langsupports">Language supports</span>
 			</div>
 			<div class="lang">
 		  <div class="lang-btn" onclick="openLangMenu()">
 		    <span class='lang-ico'></span>
-		    Select a language...
+		  	<span id="txt_thislang">Select a language...</span>
 		  </div>
     <div class="list">
       <div onclick="setLang('en-US')">English</div>
