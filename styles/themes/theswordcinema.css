@@ -107,12 +107,26 @@ footer .socials-ico {
     filter: invert(100%) sepia(51%) saturate(255%) hue-rotate(336deg) brightness(105%) contrast(102%);
 }
 
+footer .footmenu span:active {
+    background-color: rgb(253, 255, 252);
+    color: rgb(3, 25, 30);
+}
+
 footer .lang .lang-btn {
     border: 1px solid rgba(253, 255, 252, 1);
 }
 
 footer .lang .lang-ico {
     filter: invert(100%) sepia(51%) saturate(255%) hue-rotate(336deg) brightness(105%) contrast(102%);
+}
+
+footer .lang .list {
+    background-color: rgb(253, 255, 251);
+}
+
+footer .lang .list div {
+    color: rgb(3, 25, 30);
+    border-bottom: 1px solid rgb(3, 25, 30);
 }
 
 
