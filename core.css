@@ -30,6 +30,10 @@
 
 /* --------------------------------------------------*/
 
+* {
+    box-sizing: border-box;
+}
+
 ::selection {
     color: rgb(242, 242, 242, 1);
     background-color: rgba(0, 0, 0, 1);
@@ -48,6 +52,10 @@
     /*
     user-drag: none;
     */
+}
+
+.inverted {
+    mix-blend-mode: difference;
 }
 
 .header-space {
