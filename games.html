@@ -49,16 +49,15 @@
 		<!----------------------------------------------------------------------------------------------------------->
 	<main>
 		<div class="header-space-double"></div>
+		<h1><span id="txt_games">GAMES</span></h1>
 		<div class="games-layout">
-			<h1>GAMES</h1>
-			<ul>
-				<li>
-					<div class="games-poster" id="tsw" onclick="goTo('theswordcinema')"
+				<section class="game">
+					<div class="poster" id="tsw" onclick="goTo('theswordcinema')"
 													   onmouseenter="zoomIn(event)"
 													   onmouseleave="zoomOut(event)">
 					</div>
 					<div class="info">
-						<h3>The Sword Cinema</h3>
+						<h3><span id="txt_games_tsc">The Sword Cinema</span></h3>
 						<span class="year">2014</span>
 					</span>
 					<ul>
@@ -66,42 +65,42 @@
 						<li><div class="icon" id="android"></div></li>
 					</ul>
 					<span class="btn">In development</span>
-				</li>
-				<li>
-					<div class="games-poster" id="born" 
+				</section>
+				<section class="game">
+					<div class="poster" id="born" 
 										onmouseenter="zoomIn(event)"
 										onmouseleave="zoomOut(event)">
 					</div>
 					<div class="info">
-						<h3>Born</h3>
+						<h3><span id="txt_games_born">Born</span></h3>
 						<span class="year">2019</span>
 					</span>
 					<ul>
 						<li><div class="icon" id="windows"></div></li>
 					</ul>
 					<span class="btn">Unavailable</span>
-				</li>
-				<li>
-					<div class="games-poster" id="nlm"
+				</section>
+				<section class="game">
+					<div class="poster" id="nlm"
 										onmouseenter="zoomIn(event)"
 										onmouseleave="zoomOut(event)">
 					</div>
 					<div class="info">
-						<h3>Nobody Loves Me</h3>
+						<h3><span id="txt_games_nlm">Nobody Loves Me</span></h3>
 						<span class="year">2023</span>
 					</span>
 					<ul>
 						<li><div class="icon" id="windows"></div></li>
 					</ul>
 					<span class="btn">In development</span>
-				</li>
-				<li>
-					<div class="games-poster" id="rnc"
+				</section>
+				<section class="game">
+					<div class="poster" id="rnc"
 										onmouseenter="zoomIn(event)"
 										onmouseleave="zoomOut(event)">
 					</div>
 					<div class="info">
-						<h3>Rainbow & Chateau</h3>
+						<h3><span id="txt_games_rnc">Rainbow Chateau</span></h3>
 						<span class="year">2024</span>
 					</span>
 					<ul>
@@ -109,14 +108,14 @@
 						<li><div class="icon" id="ios"></div></li>
 					</ul>
 					<span class="btn">On hold</span>
-				</li>
-				<li>
-					<div class="games-poster" id="ofe"
+				</section>
+				<section class="game">
+					<div class="poster" id="ofe"
 										onmouseenter="zoomIn(event)"
 										onmouseleave="zoomOut(event)">
 					</div>
 					<div class="info">
-						<h3>Odd Fairies</h3>
+						<h3><span id="txt_games_ofe">Odd Fairies</span></h3>
 						<span class="year">2021</span>
 					</span>
 					<ul>
@@ -125,10 +124,9 @@
 						<li><div class="icon" id="macos"></div></li>
 					</ul>
 					<span class="btn">On hold</span>
-				</li>
-			</ul>
-		</div>
-		<div style="margin: 1250px"></div>
+				</div>
+		</section>
+		<div style="margin: 40vh"></div>
 	</main>
 <!----------------------------------------------------------------------------------------------------------->
 <!-- FOOTER -->
@@ -156,9 +154,9 @@
 			Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.
 		</span>
 			<div class="footmenu">
-				  <span id="txt_menu_footer_licenses">Licenses</span>
-				  <span id="txt_menu_footer_githubpage">Github page</span>
-				  <span id="txt_menu_footer_langsupports">Language supports</span>
+				  <span onclick="goTo('licenses')" id="txt_menu_footer_licenses">Licenses</span>
+				  <span onclick="openGitHubPage()" id="txt_menu_footer_githubpage">GitHub page</span>
+				  <span onclick="goTo('srccode')" id="txt_menu_footer_srccode">Source code & Security</span>
 			</div>
 			<div class="lang">
 		  <div class="lang-btn" onclick="openLangMenu()">
