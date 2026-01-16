@@ -1,69 +1,50 @@
-.otherprojects-layout {
-
-    margin-top: 170px;
-    
-    padding: 0;
-    padding-left: 2%;
-    padding-right: 2%;
-
-}
-
-.otherprojects-layout h1 {
-
-    margin: 0;
-
-}
-
 .otherprojects-layout .project {
-
     margin-bottom: 10px;
     list-style-type: none;
-
 }
 
 .otherprojects-layout .project .container {
-
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 1);
     background-position: center;
 
     padding: 0;
     margin: 0;
-    width: 695px;
-    height: 470px;
+    width: 40vh;
+    height: 27vh;
 
     flex-direction: row;
-
 }
 
 .otherprojects-layout .project .container h5 {
-
-    font-size: 25px;
+    font-size: 24px;
+    letter-spacing: -2px;
     
     margin: 0;
     padding: 1.2em;
-
 }
 
 #pixelarts > .right {
-
-    background-image: url("images/otherprojects/Pixelated Flags Thumbnail 1.png");
-    background-size: 1200px;
+    background-image: url("../images/otherprojects/Pixelated Flags Thumbnail 1.png");
+    background-size: 80vh;
     border: 0px solid rgba(0, 0, 0, 0);
-    
 }
 
 #musique > .container {
-
     color: #f2f2f2;
     background-color: #555682;
     border: 0px solid rgba(0, 0, 0, 0);
-
 }
 
 #musique > .right {
+    background-image: url("../images/otherprojects/MUSIQUE Thumbnail 1.jpg");
+    background-size: 80vh;
+}
 
-    background-image: url("images/otherprojects/MUSIQUE Thumbnail 1.jpg");
-    background-size: 1050px;
 
+
+@media only screen and (max-width: 800px) {
+    .otherprojects-layout .project .container h5 {
+        padding: 1.05em;
+    }
 }

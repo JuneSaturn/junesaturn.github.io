@@ -3,27 +3,22 @@
    -------------------------------------------------- */
 
 .games-layout {
-
     margin-top: 170px;
     
     padding: 0;
+    padding-top: 25px;
     padding-left: 16%;
     padding-right: 16%;
-
+    
 }
 
 .games-layout h1 {
-
     margin: 0;
-
 }
 
-.games-layout ul {
-
+.games-layout .game {
     padding: 0px;
-
-    list-style-type: none;
-    list-style: none;
+    
     gap: 4%;
     row-gap: 15em;
 
@@ -34,17 +29,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     white-space: nowrap;
-
 }
 
-.games-layout ul li {
-
+.games-layout .game {
     float: left;
-
 }
 
-.games-layout .games-poster { 
-
+.games-layout .poster {
     background-color: rgba(204, 204, 204, 1);
     background-size: cover;
     
@@ -64,83 +55,65 @@
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.42, 0, 0, 1);
-
 }
 
-.games-layout .games-poster#tsw  { background-image: url("images/games/The Sword Cinema Poster 1.png") !important; }
-.games-layout .games-poster#born { background-image: url("images/games/Born Poster 1.png") !important; }
-.games-layout .games-poster#nlm  { background-image: url("images/games/Nobody Loves Me Poster 1.png") !important; }
+.games-layout .poster#tsw  { background-image: url("images/games/The Sword Cinema Poster 1.png") !important; }
+.games-layout .poster#born { background-image: url("images/games/Born Poster 1.png") !important; }
+.games-layout .poster#nlm  { background-image: url("images/games/Nobody Loves Me Poster 1.png") !important; }
 
 .games-layout .info {
-
     position: relative;
     top: 15px;
 
     margin-top: 20px;
     margin-bottom: 20px;
-
 }
 
 .games-layout h3 {
-
     padding: 0px;
-
 }
 
 .games-layout .info .year {
-
     position: absolute;
     text-align: right;
     padding-left: 90%;
-
 }
 
 .games-layout ul {
-
-    padding-top: 25px;
-    
+    list-style-type: none;
+    list-style: none;
 }
 
-.games-layout ul .icon {
-
+.games-layout .icon {
     padding: 10px;
     background-size: cover;
-
 }
 
-.games-layout ul .icon#windows { background-image: url('images/platforms/Windows.svg'); }
-.games-layout ul .icon#macos { background-position: center; padding-left: 65px; background-image: url('images/platforms/macOS.svg'); }
-.games-layout ul .icon#ubuntu { background-image: url('images/platforms/Ubuntu.svg'); }
-.games-layout ul .icon#android { background-image: url('images/platforms/Android.svg'); }
-.games-layout ul .icon#ios { background-position: center; padding-left: 22px; background-image: url('images/platforms/iOS.svg'); }
+.games-layout ul .icon#windows { background-image: url('../images/platforms/Windows.svg'); }
+.games-layout ul .icon#macos { background-position: center; padding-left: 65px; background-image: url('../images/platforms/macOS.svg'); }
+.games-layout ul .icon#ubuntu { background-image: url('../images/platforms/Ubuntu.svg'); }
+.games-layout ul .icon#android { background-image: url('../images/platforms/Android.svg'); }
+.games-layout ul .icon#ios { background-position: center; padding-left: 22px; background-image: url('../images/platforms/iOS.svg'); }
 
 .games-layout .btn {
-
     position: relative;
     top: 60px;
-
 }
 
 @-webkit-keyframes appear {
-    
     from { 
         scale: 0;
     }
-
     to {
         scale: 1;
     }
-
 }
 
 @keyframes appear {
-
     from { 
         scale: 0;
     }
-
     to {
         scale: 1;
     }
-
 }
