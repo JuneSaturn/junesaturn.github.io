@@ -139,6 +139,10 @@ function goTo(page) {
     window.location.href = page+".html";
 }
 
+function openGitHubPage() {
+    window.open("https://github.com/JuneSaturn/junesaturn.github.io");
+}
+
 function openMobileMenu() {
     if (mobileMenuOpened == true) {
         mobileMenuOpened = false;
