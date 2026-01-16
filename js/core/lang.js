@@ -2,8 +2,12 @@ const SUPERCODES = {
 "en-US": {
         
         // COMMON
-        
         "txt_thislang": "English",
+        
+        "txt_games": "GAMES",
+        "txt_designs": "DESIGNS",
+        "txt_otherprojects": "OTHER PROJECTS",
+        "txt_licenses": "LICENSES",
 
         "txt_menu_header_games": "Games",
         "txt_menu_header_designs": "Designs",
@@ -32,8 +36,11 @@ const SUPERCODES = {
         "txt_footer_instruction": "Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.",
         
         "txt_menu_footer_licenses": "Licenses",
-        "txt_menu_footer_githubpage": "Github page",
+        "txt_menu_footer_githubpage": "GitHub page",
         "txt_menu_footer_langsupports": "Language supports",
+        "txt_menu_footer_srccode": "Source code & Security",
+        
+        "txt_cookies": "Ce site web utilise des cookies pour enregistrer vos préférences linguistiques. En savoir plus <a href='cookies.html'>ici.</a>",
         
         
         
@@ -49,6 +56,11 @@ const SUPERCODES = {
         
         // COMMON
         "txt_thislang": "Français",
+        
+        "txt_games": "JEUX",
+        "txt_designs": "DESIGNS",
+        "txt_otherprojects": "AUTRE PROJETS",
+        "txt_licenses": "LICENSES",
 
         "txt_menu_header_games": "Jeux",
         "txt_menu_header_designs": "Designs",
@@ -77,8 +89,11 @@ const SUPERCODES = {
         "txt_footer_instruction": "Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.",
         
         "txt_menu_footer_licenses": "Licenses",
-        "txt_menu_footer_githubpage": "Page Github",
+        "txt_menu_footer_githubpage": "Page GitHub",
         "txt_menu_footer_langsupports": "Soutien linguistique",
+        "txt_menu_footer_srccode": "Code source et Sécurité",
+        
+        "txt_cookies": "Ce site web utilise des cookies pour enregistrer vos préférences linguistiques. En savoir plus <a href='cookies.html'>ici.</a>",
         
         
         
@@ -91,6 +106,11 @@ const SUPERCODES = {
         
         // COMMON
         "txt_thislang": "한국어",
+        
+        "txt_games": "게임",
+        "txt_designs": "디자인",
+        "txt_otherprojects": "다른 프로젝트들",
+        "txt_licenses": "라이센스",
 
         "txt_menu_header_games": "게임",
         "txt_menu_header_designs": "디자인",
@@ -119,8 +139,11 @@ const SUPERCODES = {
         "txt_footer_instruction": "Designed and programmed by June Saturn. hosted on GitHub. Feel free to contact me if you have any visual or technical suggestions for the website. Thank you for visiting.",
         
         "txt_menu_footer_licenses": "라이센스",
-        "txt_menu_footer_githubpage": "Github 페이지",
+        "txt_menu_footer_githubpage": "GitHub 페이지",
         "txt_menu_footer_langsupports": "언어 지원",
+        "txt_menu_footer_srccode": "소스코드와 보안",
+        
+        "txt_cookies": "Ce site web utilise des cookies pour enregistrer vos préférences linguistiques. En savoir plus <a href='cookies.html'>ici.</a>",
         
         
         
