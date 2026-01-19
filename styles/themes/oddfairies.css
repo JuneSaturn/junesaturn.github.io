@@ -23,8 +23,8 @@
 /* --------------------------------------------------*/
 
 ::selection {
-    color: rgb(3, 25, 30, 1);
-    background-color: rgba(253, 255, 252, 1);
+    color: rgb(255, 255, 237, 1);
+    background-color: rgba(25, 25, 25, 1);
 }
 
 
@@ -32,9 +32,8 @@
 /* --------------------------------------------------*/
 
 .btn {
-    background-color: rgba(3, 25, 30, 0.2);
-    color: rgba(253, 255, 252, 1);
-    border: 2px solid rgba(253, 255, 252, 1);
+    background-color: rgba(255, 255, 237, 1);
+    color: rgba(25, 25, 25, 1);
 
     padding: 8px;
     padding-left: 30px;
@@ -43,12 +42,12 @@
 }
 
 .btn:hover {
-    border: 1px solid rgba(253, 255, 252, 1);
+    border: 1px solid rgba(25, 25, 25, 1);
 }
 
 .btn:active {
-    background-color: rgba(253, 255, 252, 1);
-    color: rgb(3, 25, 30, 1);
+    background-color: rgba(25, 25, 25, 1);
+    color: rgb(255, 255, 237, 1);
 }
 
 
@@ -56,13 +55,13 @@
 /* --------------------------------------------------*/
 
 html, body {
-    font-family: 'paperlogy';
-    background-color: rgba(3, 25, 30, 1);
-    color: rgba(253, 255, 252, 1);
+    font-family: 'lexendra';
+    background-color: rgba(255, 255, 237, 1);
+    color: rgba(25, 25, 25, 1);
 }
 
 h1 {
-    font-family: 'cafe24proslim';
+    font-family: 'lexendra';
     letter-spacing: 0px;
 }
 
@@ -73,15 +72,15 @@ h1 {
    -------------------------------------------------- */
 
 header .logo {
-    filter: invert(100%) sepia(51%) saturate(255%) hue-rotate(336deg) brightness(105%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(6%) sepia(2%) saturate(380%) hue-rotate(314deg) brightness(102%) contrast(91%);
 }
 
 header ul a {
-    color: rgba(253, 255, 252, 1);
+    color: rgba(25, 25, 25, 1);
 }
 
 header .hamburger {
-    filter: invert(100%) sepia(51%) saturate(255%) hue-rotate(336deg) brightness(105%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(6%) sepia(2%) saturate(380%) hue-rotate(314deg) brightness(102%) contrast(91%);
 }
 
 
@@ -91,53 +90,53 @@ header .hamburger {
    -------------------------------------------------- */
 
 footer {
-    background-color: rgba(3, 25, 30, 1);
-    border-top: 1px solid rgba(253, 255, 252, 0.15);
+    background-color: rgba(255, 255, 237, 1);
+    border-top: 1px solid rgba(25, 25, 25, 0.15);
 }
 
 footer .logo {
-    filter: invert(100%) sepia(51%) saturate(255%) hue-rotate(336deg) brightness(105%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(6%) sepia(2%) saturate(380%) hue-rotate(314deg) brightness(102%) contrast(91%);
 }
 
 footer hr {
     border: none;
-    border-top: 1px solid rgba(253, 255, 252, 1);
+    border-top: 1px solid rgba(25, 25, 23, 1);
 }
 
 footer .socials-ico {
-    filter: invert(100%) sepia(51%) saturate(255%) hue-rotate(336deg) brightness(105%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(6%) sepia(2%) saturate(380%) hue-rotate(314deg) brightness(102%) contrast(91%);
 }
 
 footer .footmenu span:active {
-    background-color: rgb(253, 255, 252);
-    color: rgb(3, 25, 30);
+    background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 237);
 }
 
 footer .lang .lang-btn {
-    border: 1px solid rgba(253, 255, 252, 1);
+    border: 1px solid rgba(25, 25, 25, 1);
 }
 
 footer .lang .lang-ico {
-    filter: invert(100%) sepia(51%) saturate(255%) hue-rotate(336deg) brightness(105%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(6%) sepia(2%) saturate(380%) hue-rotate(314deg) brightness(102%) contrast(91%);
 }
 
 footer .lang .list {
-    background-color: rgb(253, 255, 251);
+    background-color: rgb(25, 25, 25);
 }
 
 footer .lang .list div {
-    color: rgb(3, 25, 30);
-    border-bottom: 1px solid rgb(3, 25, 30);
+    color: rgb(255, 255, 237);
+    border-bottom: 1px solid rgb(255, 255, 237);
 }
 
 
 
 /* --------------------------------------------------
-   THE SWORD CINEMA
+   ODD FAIRIES
    -------------------------------------------------- */
 
 #preview {
-    background-color: darkturquoise;
+    background-color: rgb(255, 255, 237);
     text-align: center;
     
     height: 100vh;
