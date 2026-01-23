@@ -16,11 +16,24 @@ let mobileMenuOpened = false;
 
 
 //-----------------------------------------------------------------------------------------------------------
-// SCROLL MANAGEMENTS
+// GLOBAL EVENT HANDLERS
 //-----------------------------------------------------------------------------------------------------------
 
-$(() => { scrollManager(); });
-$(window).on('scroll', function () { scrollManager(); });
+// On DOM ready
+$(() => { 
+    scrollManager();
+});
+
+// On window scroll
+$(window).on('scroll', function () { 
+    scrollManager();
+});
+
+
+
+//-----------------------------------------------------------------------------------------------------------
+// SCROLL MANAGEMENT
+//-----------------------------------------------------------------------------------------------------------
 
 function scrollManager() {
     let scrollTop = $(document).scrollTop();
@@ -37,15 +50,16 @@ function scrollManager() {
                     color(WHITE);
                 }
                 else if (scrollTop >= window.innerHeight - 32) {
-                    color(BLACK);
+                    
                 }
             break;
             default:
+                color(BLACK);
             break;
         }
     }
     
-    // Fades in or out of border-bottom
+    // Fades border-bottom in or out
     checkBorderBottom(scrollTop);
 }
 
@@ -56,6 +70,7 @@ function scrollAnchors() {
 function color(col) {
     if (col == WHITE) {
         headerColor = WHITE;
+        $("header").css("mix-blend-mode", "none");
         $("header .logo > img").css("filter", "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)");
         $("header ul li a").css("color", "#f2f2f2");
         $("header ul li").css("color", "#f2f2f2");
@@ -66,6 +81,7 @@ function color(col) {
     }
     else if (col == BLACK) {
         headerColor = BLACK;
+        $("header").css("mix-blend-mode", "none");
         $("header .logo > img").css("filter", "invert(0%) sepia(3%) saturate(5%) hue-rotate(334deg) brightness(98%) contrast(100%)");
         $("header ul li a").css("color", "#000000");
         $("header ul li").css("color", "#000000");
@@ -73,6 +89,17 @@ function color(col) {
         "-1px 0px rgba(242, 242, 242, 0.25), 0px 1px rgba(242, 242, 242, 0.25), 1px 0px rgba(242, 242, 242, 0.25), 0px -1px rgba(242, 242, 242, 0.25)"
         );
         $("header .hamburger > img").css("filter", "invert(0%) sepia(3%) saturate(5%) hue-rotate(334deg) brightness(98%) contrast(100%)");
+    }
+    else if (col == DIFF) {
+        headerColor = DIFF;
+        $("header").css("mix-blend-mode", "difference");
+        $("header .logo > img").css("filter", "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)");
+        $("header ul li a").css("color", "#f2f2f2");
+        $("header ul li").css("color", "#f2f2f2");
+        $("header ul a").css("text-shadow",
+            "-1px 0px rgba(0, 0, 0, 0.25), 0px 1px rgba(0, 0, 0, 0.25), 1px 0px rgba(0, 0, 0, 0.25), 0px -1px rgba(0, 0, 0, 0.25)"
+        );
+        $("header .hamburger > img").css("filter", "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)");
     }
 }
 
@@ -149,8 +176,8 @@ function openMobileMenu() {
         $(".menu-formobile").css("opacity", "0");
         $("header .hamburger").html('<img src="images/Hamburger.svg" class="undraggable" onclick="openMobileMenu()">');
         scrollManager();
-        $(".menu-formobile").addClass("scrollToTop");
-        $(".menu-formobile").removeClass("scrollToBottom");
+        $(".menu-formobile").addClass("scrollToLeft");
+        $(".menu-formobile").removeClass("scrollToRight");
     }
     else if (mobileMenuOpened == false) {
         mobileMenuOpened = true;
@@ -158,8 +185,8 @@ function openMobileMenu() {
         $("header .hamburger").html('<img src="images/Back.svg" class="undraggable" onclick="openMobileMenu()">');
         color(BLACK);
         checkBorderBottom(0);
-        $(".menu-formobile").addClass("scrollToBottom");
-        $(".menu-formobile").removeClass("scrollToTop");
+        $(".menu-formobile").addClass("scrollToRight");
+        $(".menu-formobile").removeClass("scrollToLeft");
     }
 }
 
