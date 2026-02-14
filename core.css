@@ -202,6 +202,14 @@ h3 {
     transform: translateY(-100vh);
 }
 
+.scrollToLeft {
+    transform: translateX(-100vw);
+}
+
+.scrollToRight {
+    transform: translateX(100vw);
+}
+
 
 
 /* --------------------------------------------------
@@ -219,6 +227,8 @@ header {
     /* background: linear-gradient(rgba(242, 242, 242, 0.3), rgba(242, 242, 242, 0)); */
     /*background-color: rgba(242, 242, 242, 0.01);
     backdrop-filter: blur(50px);*/
+    
+    mix-blend-mode: difference;
     
     border-bottom: 1px solid rgba(242, 242, 242, 0.5);
     opacity: 1;
@@ -256,10 +266,12 @@ header ul li {
 
 header ul a {
     color: rgba(0, 0, 0, 1);
+    /*
     text-shadow: -1px  0px rgba(242, 242, 242, 0.25),
                   0px  1px rgba(242, 242, 242, 0.25),
                   1px  0px rgba(242, 242, 242, 0.25),
                   0px -1px rgba(242, 242, 242, 0.25);
+    */
     
     text-decoration-line: none;
 }
@@ -297,20 +309,21 @@ header .hamburger > img {
    MOBILE MENU
    -------------------------------------------------- */
 
-.menu-formobile {
+.mobilemenu {
     font-family: 'lexendra';
     
     position: fixed;
     display: flex;
     z-index: 9;
-    left: 0;
-    top: -100vh;
+    left: 100vw;
+    top: 0vh;
     width: 100%;
     height: 100vh;
     
     overflow: scroll;
     
-    background-color: rgba(242, 242, 242, 0.3);
+    background-color: rgba(242, 242, 242, 0.5);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     opacity: 0;
     
@@ -318,7 +331,7 @@ header .hamburger > img {
     transition-duration: 0.8s;
 }
 
-.menu-formobile > .list {
+.mobilemenu > .list {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
@@ -328,7 +341,7 @@ header .hamburger > img {
     margin-top: 80px;
 }
 
-.menu-formobile > .list .menubtn {
+.mobilemenu > .list .menubtn {
     padding: 12px;
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -336,25 +349,25 @@ header .hamburger > img {
     transition-duration: 0.4s;
 }
 
-.menu-formobile > .list .menubtn:hover {
+.mobilemenu > .list .menubtn:hover {
     border: 2px solid rgba(0, 0, 0, 1);
 }
 
-.menu-formobile > .list .menubtn:active {
+.mobilemenu > .list .menubtn:active {
     transform: scale(1.03);
 }
 
-.menu-formobile > .list details .featured-games {
+.mobilemenu > .list details .featured-games {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
 }
 
-.menu-formobile > .list details .featured-games .menubtn {
+.mobilemenu > .list details .featured-games .menubtn {
     padding-top: 70px;
 }
 
-.menu-formobile > .list .copy {
+.mobilemenu > .list .copy {
     text-align: center;
     font-size: 10px;
     padding-top: 20px;
@@ -362,7 +375,7 @@ header .hamburger > img {
 }
 
 @media only screen and (max-width: 800px) {
-    .menu-formobile {
+    .mobilemenu {
         
     }
 }
@@ -380,7 +393,7 @@ footer {
     background-color: rgba(242, 242, 242, 1);
     border-top: 1px solid rgb(0, 0, 0, 0.15);
 
-    padding: 35px;
+    padding: 24px;
     padding-top: 50px;
     padding-bottom: 50px;
     
