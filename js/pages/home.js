@@ -1,27 +1,31 @@
+// On DOM ready
+$(() => {
+    const slideUpdater = setInterval(() => {
+        if (slideIdx >= maxSlide) {
+            slideIdx = 1;
+        }
+        else {
+            slideIdx++;
+        }
+        // for debugging
+        // console.log(slideIdx);
+        updateSlideShow();
+    }, durationTime);
+});
+
+
+
 //-----------------------------------------------------------------------------------------------------------
 // SLIDES
 //-----------------------------------------------------------------------------------------------------------
 
-let slideIndex = 1;
+let slideIdx = 1;
+const maxSlide = 3;
+const durationTime = 5000;
 
-$(() => {
-    slideIndex = 1;
-    showSlides(slideIndex);
-});
-
-function showSlides(n) {
-    let slides = document.getElementsByClassName("slide");
-    if (n > slides.length) { slideIndex = 1 }    
-    if (n < 1) { slideIndex = slides.length }
-    for (let slide of slides) {
-        slide.style.display = "none";
-    }
-    slides[slideIndex-1].style.display = "block";
+function updateSlideShow() {
+    $(".slides .img").removeClass("has-transition");
+    $(".slides .img:nth-child("+slideIdx+")").addClass("has-transition");
 }
 
-
-
-//-----------------------------------------------------------------------------------------------------------
-// HEADER COLORING
-//-----------------------------------------------------------------------------------------------------------
 
