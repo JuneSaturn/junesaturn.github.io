@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------------------------------------
-// VARIABLES
+// COMMON VARIABLES
 //-----------------------------------------------------------------------------------------------------------
 
 // Coloring
@@ -7,11 +7,14 @@ const BLACK = 0;
 const WHITE = 1;
 const DIFF = 2;
 let headerColor = 0;
-let stopColoring = false;
-let removeBorderBottom = false;
+let isHeaderColoringStopped = false;
+let isHeaderBorderRemoved = false;
 
 // Menu
-let mobileMenuOpened = false;
+let isMobileMenuOpened = false;
+
+// Scroll
+let scrollSnap = false;
 
 
 
@@ -21,13 +24,27 @@ let mobileMenuOpened = false;
 
 // On DOM ready
 $(() => { 
+    init();
     scrollManager();
 });
 
 // On window scroll
-$(window).on('scroll', function () { 
+$(window).on('scroll', () => { 
     scrollManager();
 });
+
+
+
+//-----------------------------------------------------------------------------------------------------------
+// INITIALIZATION
+//-----------------------------------------------------------------------------------------------------------
+
+function init() {
+    const scrollTop = $(document).scrollTop();
+    if (scrollTop <= window.innerHeight) {
+        
+    }
+}
 
 
 
@@ -36,21 +53,21 @@ $(window).on('scroll', function () {
 //-----------------------------------------------------------------------------------------------------------
 
 function scrollManager() {
-    let scrollTop = $(document).scrollTop();
+    const scrollTop = $(document).scrollTop();
     const page = getCurrentPage();
     
     // For debugging
     // console.log(scrollTop);
     
     // Switches color
-    if (mobileMenuOpened == false && stopColoring == false) {
+    if (!(isMobileMenuOpened && isHeaderColoringStopped)) {
         switch(page) {
             case "index":
                 if (scrollTop < window.innerHeight - 32) {
                     color(WHITE);
                 }
-                else if (scrollTop >= window.innerHeight - 32) {
-                    
+                else if (scrollTop >= window.innerHeight - 14) {
+                    color(DIFF);
                 }
             break;
             default:
@@ -59,53 +76,90 @@ function scrollManager() {
         }
     }
     
-    // Fades border-bottom in or out
-    checkBorderBottom(scrollTop);
+    // Fades the header border-bottom in or out
+    if (!isMobileMenuOpened) {
+        checkHeaderBorder(scrollTop);
+    }
 }
 
 function scrollAnchors() {
     $('.full-height').css('height', $(window).height());
 }
 
+const svgFilterStrings = [
+    // BLACK
+    "invert(0%) sepia(3%) saturate(5%) hue-rotate(334deg) brightness(98%) contrast(100%)",
+    
+    // WHITE
+    "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)"
+];
+
+const shadowStrings = [
+    // bright (for BLACK text)
+    "-1px 0px rgba(0, 0, 0, 0.25), 0px 1px rgba(0, 0, 0, 0.25), 1px 0px rgba(0, 0, 0, 0.25), 0px -1px rgba(0, 0, 0, 0.25)",
+
+    // dark (for WHITE text)
+    "-1px 0px rgba(242, 242, 242, 0.25), 0px 1px rgba(242, 242, 242, 0.25), 1px 0px rgba(242, 242, 242, 0.25), 0px -1px rgba(242, 242, 242, 0.25)"
+];
+
+/*
+const cssColorPresets = [
+    { // BLACK
+        "header": {"mix-blend-mode": "normal"},
+        "header ul li a": {"color": "#000000"},
+        "header ul li": {"color": "#000000"},
+        "header ul a": {"text-shadow": shadowStrings[BLACK]},
+        "header .logo > img": {"filter": svgFilterStrings[BLACK]},
+        "header .hamburger > img": {"filter": svgFilterStrings[BLACK]}
+    },
+    { // WHITE
+        {"mix-blend-mode": "normal"}
+        {"color": "#f2f2f2"}
+        {"filter": svgFilterStrings[WHITE]}
+        {"text-shadow": shadowStrings[WHITE]}
+    },
+    { // DIFF
+        {"mix-blend-mode": "difference"}
+        {"color": "#f2f2f2"}
+        {"filter": svgFilterStrings[WHITE]}
+        {"text-shadow": shadowStrings[WHITE]}
+    }
+];
+*/
+
 function color(col) {
     if (col == WHITE) {
         headerColor = WHITE;
-        $("header").css("mix-blend-mode", "none");
-        $("header .logo > img").css("filter", "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)");
+        $("header").css("mix-blend-mode", "normal");
+        $("header .logo > img").css("filter", svgFilterStrings[WHITE]);
         $("header ul li a").css("color", "#f2f2f2");
         $("header ul li").css("color", "#f2f2f2");
-        $("header ul a").css("text-shadow",
-            "-1px 0px rgba(0, 0, 0, 0.25), 0px 1px rgba(0, 0, 0, 0.25), 1px 0px rgba(0, 0, 0, 0.25), 0px -1px rgba(0, 0, 0, 0.25)"
-        );
-        $("header .hamburger > img").css("filter", "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)");
+        $("header ul a").css("text-shadow", shadowStrings[WHITE]);
+        $("header .hamburger > img").css("filter", svgFilterStrings[WHITE]);
     }
     else if (col == BLACK) {
         headerColor = BLACK;
-        $("header").css("mix-blend-mode", "none");
-        $("header .logo > img").css("filter", "invert(0%) sepia(3%) saturate(5%) hue-rotate(334deg) brightness(98%) contrast(100%)");
+        $("header").css("mix-blend-mode", "normal");
+        $("header .logo > img").css("filter", svgFilterStrings[BLACK]);
         $("header ul li a").css("color", "#000000");
         $("header ul li").css("color", "#000000");
-        $("header ul a").css("text-shadow",
-        "-1px 0px rgba(242, 242, 242, 0.25), 0px 1px rgba(242, 242, 242, 0.25), 1px 0px rgba(242, 242, 242, 0.25), 0px -1px rgba(242, 242, 242, 0.25)"
-        );
-        $("header .hamburger > img").css("filter", "invert(0%) sepia(3%) saturate(5%) hue-rotate(334deg) brightness(98%) contrast(100%)");
+        $("header ul a").css("text-shadow", shadowStrings[BLACK]);
+        $("header .hamburger > img").css("filter", svgFilterStrings[BLACK]);
     }
     else if (col == DIFF) {
         headerColor = DIFF;
         $("header").css("mix-blend-mode", "difference");
-        $("header .logo > img").css("filter", "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)");
+        $("header .logo > img").css("filter", svgFilterStrings[WHITE]);
         $("header ul li a").css("color", "#f2f2f2");
         $("header ul li").css("color", "#f2f2f2");
-        $("header ul a").css("text-shadow",
-            "-1px 0px rgba(0, 0, 0, 0.25), 0px 1px rgba(0, 0, 0, 0.25), 1px 0px rgba(0, 0, 0, 0.25), 0px -1px rgba(0, 0, 0, 0.25)"
-        );
-        $("header .hamburger > img").css("filter", "invert(100%) sepia(2%) saturate(80%) hue-rotate(152deg) brightness(117%) contrast(90%)");
+        $("header ul a").css("text-shadow", shadowStrings[WHITE]);
+        $("header .hamburger > img").css("filter", svgFilterStrings[WHITE]);
     }
 }
 
-function checkBorderBottom(scrollTop) {
-    if (mobileMenuOpened == false && removeBorderBottom == false) {
-        if (scrollTop > 10) {
+function checkHeaderBorder(scrollTop) {
+    if (!(isMobileMenuOpened && isHeaderBorderRemoved)) {
+        if (scrollTop > 5) {
             if (headerColor == BLACK) {
                 $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0)");
             }
@@ -113,7 +167,7 @@ function checkBorderBottom(scrollTop) {
                 $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0)");
             }
         }
-        else if (removeBorderBottom == false) {
+        else if (!isHeaderBorderRemoved) {
             if (headerColor == BLACK) {
                 $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0.5)");
             }
@@ -121,16 +175,16 @@ function checkBorderBottom(scrollTop) {
                 $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0.5)");
             }
         }
-        else if (removeBorderBottom) {
+        else if (isHeaderBorderRemoved) {
             $("header").css("transition", "'0s'");
             $("header").css("border-bottom", "0px solid rgba(0, 0, 0, 0)");
         }
     }
-    else if (mobileMenuOpened) {
+    else if (isMobileMenuOpened) {
         if (headerColor == BLACK) {
             $("header").css("border-bottom", "1px solid rgba(0, 0, 0, 0)");
         }
-        else if (headerColor == WHITE) {
+        else { // WHITE or DIFF
             $("header").css("border-bottom", "1px solid rgba(242, 242, 242, 0)");
         }
     }
@@ -145,12 +199,11 @@ function checkBorderBottom(scrollTop) {
 function goToMain() {
     const page = getCurrentPage();
     if (page === "index") {
-        if (mobileMenuOpened) {
+        if (isMobileMenuOpened) {
             return
         }
         window.scroll({
-            top: -window.scrollY,
-            left: 0,
+            top: 0,
             behavior: 'smooth'
         });
     }
@@ -171,22 +224,20 @@ function openGitHubPage() {
 }
 
 function openMobileMenu() {
-    if (mobileMenuOpened == true) {
-        mobileMenuOpened = false;
-        $(".menu-formobile").css("opacity", "0");
-        $("header .hamburger").html('<img src="images/Hamburger.svg" class="undraggable" onclick="openMobileMenu()">');
+    if (isMobileMenuOpened) {
+        isMobileMenuOpened = false;
+        $(".mobilemenu").css("opacity", "0");
         scrollManager();
-        $(".menu-formobile").addClass("scrollToLeft");
-        $(".menu-formobile").removeClass("scrollToRight");
+        $(".mobilemenu").addClass("scrollToRight");
+        $(".mobilemenu").removeClass("scrollToLeft");
     }
-    else if (mobileMenuOpened == false) {
-        mobileMenuOpened = true;
-        $(".menu-formobile").css("opacity", "1");
-        $("header .hamburger").html('<img src="images/Back.svg" class="undraggable" onclick="openMobileMenu()">');
+    else if (!isMobileMenuOpened) {
+        isMobileMenuOpened = true;
+        $(".mobilemenu").css("opacity", "1");
         color(BLACK);
-        checkBorderBottom(0);
-        $(".menu-formobile").addClass("scrollToRight");
-        $(".menu-formobile").removeClass("scrollToLeft");
+        checkHeaderBorder(10);
+        $(".mobilemenu").addClass("scrollToLeft");
+        $(".mobilemenu").removeClass("scrollToRight");
     }
 }
 
@@ -218,6 +269,37 @@ function zoomOut(event) {
     event.target.style.zIndex = 0;
     event.target.style.transition = "all 0.2s";
 }
+
+
+
+//-----------------------------------------------------------------------------------------------------------
+// COOKIE MANAGEMENT
+//-----------------------------------------------------------------------------------------------------------
+
+function setCookie(name, value, exp) {
+    document.cookie = name+"="+value+"; path=/; max-age=3600; Secure";
+}
+
+function getCookie(name) {
+    const cookies = document.cookie.split(";");
+    for (const cookie of cookies) {
+        const [key, value] = cookie.split("=");
+        if (key === name) {
+            return value;
+        }
+    }
+    return null;
+}
+
+function deleteCookie(name) {
+    document.cookie = name+"=; expires=Thu, 01 Jan 1999 00:00:10 GMT;"
+}
+
+function hasCookie(name) {
+    return document.cookie.split("; ").some(cookie => cookie.startsWith(name+"="));
+}
+
+
 
 
 
