@@ -60,7 +60,7 @@ function scrollManager() {
     // console.log(scrollTop);
     
     // Switches color
-    if (!(isMobileMenuOpened && isHeaderColoringStopped)) {
+    if (!(isMobileMenuOpened || isHeaderColoringStopped)) {
         switch(page) {
             case "index":
                 if (scrollTop < window.innerHeight - 32) {
