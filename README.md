@@ -12,3 +12,8 @@
 ##### IN DEVELOPMENT
 * Language preferences are saved via cookies.
 * Incorporated jQuery 3.7.1 selectively to enhance code readability.
+
+
+
+
+![](images/June Saturn.png)
