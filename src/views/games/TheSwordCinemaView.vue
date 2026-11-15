@@ -26,27 +26,28 @@
 
     <main>
       <p>
-        Enter the world of the silver screen and solve various problems. Your exceptional directing
-        style is swordplay. Your elegant hand movements have the potential to shake mainstream
-        culture and create new formulas.
+        Step into the world of the silver screen and set its troubled stories straight with your
+        exceptional directing style: swordplay. Every elegant stroke of your hand has the potential
+        to shake up mainstream culture and redefine the formula.
       </p>
       <p>
-        Nico, Patrice &amp; Patricia, Cyriaque, and Fantome have gathered to fix the world. First,
-        let's save the King Auteur in trouble... There are monsters who dislike the stories written
-        by the King Auteur and wish for movies, music, and literature to disappear from the world.
-        While fencing skills appear, the rules of actual sports fencing are not applied. Perhaps you
-        will need to memorize some refined control methods for advanced moves, but even without
-        them, there will be no trouble with the overall game progress.
+        Nico, Patrice &amp; Patricia, Cyriaque, and Fantôme have come together to set the world right.
+        First things first: the King Auteur is in trouble... Monsters who despise his stories are
+        out to erase movies, music, and literature from the world.
       </p>
-      <h2>Game Play Notes</h2>
+      <p>
+        Fencing techniques are featured, but the rules of competitive fencing don’t apply.
+        Advanced moves may call for a few precise controls, but you can clear the whole game
+        without ever learning them.
+      </p>
+      <h2>Gameplay Notes</h2>
       <ul>
         <li>
-          The current version of this game does not collect your personal information and does not
-          support online saving. If you have not backed up your gamer files, you will need to start
-          over from the beginning when you delete the game. For more information about device
-          transfers, please click here.
+          This version does not collect personal information and does not support online saving.
+          If you have not backed up your MagPass (your save data), you’ll need to start over from the beginning
+          if you delete the game. For details on transferring to another device, <a href="/wip/">click here</a>.
         </li>
-        <li>This game was developed with Unity and is subject to the corresponding license.</li>
+        <li>This game was made with Unity. Subject to the Unity license terms.</li>
       </ul>
     </main>
   </div>
