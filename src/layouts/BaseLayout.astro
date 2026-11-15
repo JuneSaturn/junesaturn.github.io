@@ -1,0 +1,26 @@
+---
+import '@/assets/styles/core.css'
+import SiteHeader from '@/components/SiteHeader.vue'
+import SiteFooter from '@/components/SiteFooter.vue'
+
+interface Props {
+  title?: string
+  bare?: boolean
+}
+const { title, bare = false } = Astro.props
+const pageTitle = title ? `June Saturn | ${title}` : 'June Saturn'
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    {!bare && <SiteHeader client:load currentPath={Astro.url.pathname} />}
+    <slot />
+    {!bare && <SiteFooter />}
+  </body>
+</html>

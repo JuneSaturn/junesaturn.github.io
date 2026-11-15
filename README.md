@@ -1,15 +1,21 @@
 ![](.github/images/static-saturn-promo1.png)
+
 # STATIC SATURN.html
-##### [junesaturn.github.io](https://junesaturn.github.io)
+
+##### [junesaturn.me](https://junesaturn.github.io)
 
 ### OVERVIEW
+
 **Static Saturn** is a front-end web project that brings together my projects and a short bio in one place.
 
 ### FEATURES
+
 ##### IN DESIGN
-* Designed with a minimalist aesthetic.
-* Built with a responsive layout.
+
+- Designed with a minimalist aesthetic.
+- Built with a responsive layout.
 
 ##### IN DEVELOPMENT
-* Language preferences are saved via cookies.
-* Incorporated jQuery 3.7.1 and Vue.js to enhance code readability.
+
+- Language preferences are saved via cookies.
+- Incorporated Astro and Vue.js to enhance code readability.
