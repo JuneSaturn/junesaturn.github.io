@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { games } from '@/data/games'
+</script>
+
 <template>
   <div class="tsc-page">
     <section class="feature-graphic">
@@ -31,7 +35,7 @@
         to shake up mainstream culture and redefine the formula.
       </p>
       <p>
-        Nico, Patrice &amp; Patricia, Cyriaque, and Fantôme have come together to set the world right.
+        Nicole, Patrice &amp; Patricia, Cyriaque, and Fantôme have come together to set the world right.
         First things first: the King Auteur is in trouble... Monsters who despise his stories are
         out to erase movies, music, and literature from the world.
       </p>
