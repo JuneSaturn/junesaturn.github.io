@@ -43,7 +43,7 @@ const socials = [
         any visual or technical suggestions for the website. Thank you for visiting.
       </span>
       <div class="footmenu">
-        <a href="/">Licenses</a>
+        <a href="/licenses/">Licenses</a>
         <a href="https://github.com/JuneSaturn/junesaturn.github.io" target="_blank" rel="noopener">
           GitHub&nbsp;page
         </a>
