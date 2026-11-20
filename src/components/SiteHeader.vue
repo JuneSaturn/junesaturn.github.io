@@ -47,7 +47,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           {{ game.title }}
         </a>
       </template>
-      <a href="/wip/">Portfolios</a>
+      <a href="/portfolios/">Portfolios</a>
       <a href="/logs/">Logs</a>
       <a href="/about-me/">About Me</a>
 

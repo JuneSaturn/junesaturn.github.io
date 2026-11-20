@@ -15,7 +15,7 @@ import { games } from '@/data/games'
           class="poster"
           :style="{
             backgroundColor: game.color,
-            backgroundImage: game.image ? `url('${game.image}')` : undefined,}">
+            backgroundImage: game.image ? `url('${game.image}')` : undefined}">
         </div>
         <div class="title">{{ game.title }}</div>
         <div class="year">{{ game.year }}</div>

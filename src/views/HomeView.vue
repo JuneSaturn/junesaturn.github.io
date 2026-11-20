@@ -20,11 +20,11 @@ import { games } from '@/data/games'
       class="content-item"
       :style="{
         '--item-color': game.color,
-        '--item-image': game.image ? `url('${game.image}')` : 'none',
+        '--item-image': game.image ? `url('${game.image}')` : 'none'
       }">
       <img
-        v-if="game.logo"
-        :src="game.logo"
+        v-if="game.fullLogo"
+        :src="game.fullLogo"
         :alt="game.title"
         class="content-logo"
         :class="{ blend: game.logoBlend }"/>
@@ -39,8 +39,13 @@ import { games } from '@/data/games'
 .hero {
   width: 100%;
   height: 100lvh;
-  background: var(--black) url('@/assets/images/illustrations/carousel/carpentier01.png') 60%
-    center / cover no-repeat fixed;
+
+  background-color: var(--black);
+  background-image: url('@/assets/images/illustrations/carousel/carpentier01.png');
+  background-position: 60% center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .prime-content {
@@ -51,8 +56,12 @@ import { games } from '@/data/games'
   margin: 14px;
   padding: 8px;
   border-radius: 24px;
-  background: var(--black) url('@/assets/images/illustrations/carousel/etoile01.png') center / cover
-    no-repeat;
+
+  background-color: var(--black);
+  background-image: url('@/assets/images/illustrations/carousel/etoile01.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .desc {

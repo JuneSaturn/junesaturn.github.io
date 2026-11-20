@@ -11,4 +11,14 @@ export default defineConfig({
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
     },
   },
+  i18n: {
+    locales: [
+      { path: 'en-gb', codes: ['en-GB'] },
+      { path: 'en-us', codes: ['en-US'] },
+      { path: 'fr-fr', codes: ['fr-FR'] },
+      { path: 'ko-kr', codes: ['ko-KR'] },
+    ],
+    defaultLocale: 'en-us',
+    routing: { prefixDefaultLocale: false },
+  },
 })

@@ -8,12 +8,14 @@ interface Props {
   gameTitle?: string
   description?: string
   bare?: boolean
+  headerBorder?: boolean
 }
 const {
   title,
   gameTitle,
   description = "June Saturn's Website",
   bare = false,
+  headerBorder = true,
 } = Astro.props
 const pageTitle = gameTitle ? `${gameTitle}` : (title ? `June Saturn | ${title}` : 'June Saturn')
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
