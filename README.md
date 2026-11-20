@@ -19,7 +19,7 @@
 ##### 💻 TECH
 
 - Hosted on GitHub Pages.
-- Built with Astro and Vue.js using a component-based structure for clean, readable code.
+- Built with [Astro](https://github.com/withastro/astro) and [Vue.js](https://github.com/vuejs/core) using a component-based structure for clean, readable code.
 - Written in TypeScript.
 
 ---
